@@ -1,0 +1,9 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery
+  cloud:
+    config:
+      uri: http://config:8888
+      failFast: true
