@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+
+  rabbitmq-bus:
+    image: rabbitmq:3.7.17-management
+    hostname: rabbitmq-bus
+    networks:
+      - microservices
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq
+
+  config:
+    image: mip/config-service
+    # container_name: config
+    networks:
+      - microservices
+    depends_on:
+      - rabbitmq-bus
+    ports:
+      - 8888:8888
+
+networks:
+  microservices:
+    external: true

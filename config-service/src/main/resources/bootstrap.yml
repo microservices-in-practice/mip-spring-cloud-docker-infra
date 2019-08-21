@@ -1,0 +1,23 @@
+server:
+  port: 8888
+info:
+  component: Config Service
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      failFast: true
+      server:
+        git:
+          uri: https://github.com/microservices-in-practice/mip-spring-cloud-docker-config.git
+  rabbitmq:
+    host: rabbitmq-bus
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
