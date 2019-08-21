@@ -7,3 +7,4 @@ spring:
     config:
       uri: http://config:8888
       failFast: true
+
