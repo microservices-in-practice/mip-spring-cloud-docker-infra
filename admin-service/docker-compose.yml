@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+
+  admin:
+    image: mip/admin-service
+    hostname: admin
+    # container_name: admin
+    networks:
+      - microservices
+    ports:
+      - 7979:7979
+
+networks:
+  microservices:
+    external: true

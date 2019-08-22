@@ -1,0 +1,9 @@
+server:
+  port: 7979
+spring:
+  application:
+    name: admin
+  cloud:
+    config:
+      uri: http://config:8888
+      failFast: true

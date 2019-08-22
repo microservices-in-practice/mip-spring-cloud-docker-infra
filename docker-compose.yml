@@ -31,6 +31,15 @@ services:
     ports:
       - 8761:8761
 
+  admin:
+    image: mip/admin-service
+    hostname: admin
+    # container_name: admin
+    networks:
+      - microservices
+    ports:
+      - 7979:7979
+
 networks:
   microservices:
     external: true
