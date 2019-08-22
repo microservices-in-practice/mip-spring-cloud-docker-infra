@@ -40,6 +40,15 @@ services:
     ports:
       - 7979:7979
 
+  gateway:
+    image: mip/gateway-service
+    hostname: gateway
+    # container_name: gateway
+    networks:
+      - microservices
+    ports:
+      - 9090:9090
+
 networks:
   microservices:
     external: true
